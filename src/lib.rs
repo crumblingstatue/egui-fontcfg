@@ -153,10 +153,18 @@ impl FontCfgUi {
         }
         ui.separator();
         ui.horizontal(|ui| {
-            if ui.button("✅ Apply").clicked() {
+            if ui
+                .button("✅ Apply")
+                .on_hover_text("Apply the font config to the current egui context")
+                .clicked()
+            {
                 ui.ctx().set_fonts(font_defs.clone());
             }
-            if ui.button("💾 Save").clicked() {
+            if ui
+                .button("💾 Save")
+                .on_hover_text("Save the custom font paths")
+                .clicked()
+            {
                 msg = FontDefsUiMsg::SaveRequest;
             }
         });
