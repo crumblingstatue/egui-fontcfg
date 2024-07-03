@@ -13,7 +13,7 @@
 //! - Make sure `egui`'s `serialize` feature is enabled
 //! - Serialize the [`egui::FontFamily`] of your font data
 //! - Serialize [`CustomFontPaths`], and use [`load_custom_fonts`] to load the custom fonts
-//! that the user added.
+//!   that the user added.
 #![warn(missing_docs)]
 
 use {
