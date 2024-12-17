@@ -18,7 +18,7 @@
 
 use {
     egui::{ahash::HashMap, FontData, FontDefinitions},
-    std::collections::BTreeMap,
+    std::{collections::BTreeMap, sync::Arc},
 };
 
 /// The state of the font configuration ui
@@ -91,7 +91,7 @@ impl FontCfgUi {
                         return FontDefsUiMsg::None;
                     }
                 };
-                let data = egui::FontData::from_owned(font_data);
+                let data = Arc::new(egui::FontData::from_owned(font_data));
                 font_defs.font_data.insert(self.name_buf.clone(), data);
                 if let Some(custom) = &mut custom {
                     custom.insert(self.name_buf.clone(), self.path_buf.clone());
