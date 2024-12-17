@@ -38,11 +38,11 @@ pub type CustomFontPaths = HashMap<String, String>;
 /// Helper function to load custom fonts from a [`CustomFontPaths`] to a [`FontData`].
 pub fn load_custom_fonts(
     custom: &CustomFontPaths,
-    font_data: &mut BTreeMap<String, FontData>,
+    font_data: &mut BTreeMap<String, Arc<FontData>>,
 ) -> std::io::Result<()> {
     for (k, v) in custom {
         let data = std::fs::read(v)?;
-        font_data.insert(k.to_owned(), FontData::from_owned(data));
+        font_data.insert(k.to_owned(), Arc::new(FontData::from_owned(data)));
     }
     Ok(())
 }
