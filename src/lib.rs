@@ -17,7 +17,7 @@
 #![warn(missing_docs)]
 
 use {
-    egui::{ahash::HashMap, FontData, FontDefinitions},
+    egui::{FontData, FontDefinitions, ahash::HashMap},
     std::{collections::BTreeMap, sync::Arc},
 };
 
