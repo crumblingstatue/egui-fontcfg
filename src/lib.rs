@@ -17,8 +17,11 @@
 #![warn(missing_docs)]
 
 use {
-    egui::{FontData, FontDefinitions, ahash::HashMap},
-    std::{collections::BTreeMap, sync::Arc},
+    egui::{FontData, FontDefinitions},
+    std::{
+        collections::{BTreeMap, HashMap},
+        sync::Arc,
+    },
 };
 
 /// The state of the font configuration ui
